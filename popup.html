@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            width: 200px;
+            padding: 10px;
+            font-family: sans-serif;
+        }
+
+        .option {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">G+ LyricLens Settings</div>
+    <div class="option">
+        <label><input type="checkbox" id="enable" checked> Enable Romanization</label>
+    </div>
+    <div class="option">
+        <label><input type="checkbox" id="lang-ko" checked> Korean (Hangeul)</label>
+        <label><input type="checkbox" id="lang-ja" checked> Japanese (Kana)</label>
+        <label><input type="checkbox" id="lang-zh" checked> Chinese (Hanzi)</label>
+    </div>
+    <div class="option" style="border-top: 1px solid #eee; padding-top: 10px;">
+        <label><input type="checkbox" id="show-translation" checked> Show English Translation</label>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

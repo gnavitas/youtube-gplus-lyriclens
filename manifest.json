@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "G+ LyricLens",
+    "version": "1.0",
+    "description": "Romanizes Korean, Japanese, and Chinese subtitles on YouTube.",
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "https://translate.googleapis.com/*",
+        "https://lrclib.net/*",
+        "https://*.petitlyrics.com/*",
+        "https://www.uta-net.com/*",
+        "https://j-lyric.net/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "48": "icon.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.youtube.com/*"
+            ],
+            "js": [
+                "lib/pinyin-pro.js",
+                "lib/kanji-dict.js",
+                "lib/romanizer-ko.js",
+                "lib/romanizer-ja.js",
+                "lib/romanizer-zh.js",
+                "content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "icons": {
+        "48": "icon.png"
+    }
+}
